@@ -1,0 +1,7 @@
+# README
+### Run scripts in order
+bandwidth_extractor/stats_bandwidth
+tile_prediction_nn/create_tiles
+tile_prediction_nn/nn_train
+tile_prediction_nn/nn_use
+tile_prediction_nn/plot_hmd

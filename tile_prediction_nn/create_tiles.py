@@ -14,7 +14,7 @@ n = m = 4
 
 for userid in os.listdir('results'):
 	if userid[0]!=".":
-		filedir = 'results/'+userid+'/test0/Diving-2OzlksZBTiA/'
+		filedir = '../results/'+userid+'/test0/Diving-2OzlksZBTiA/'
 		# filedir = 'results/uid-0f33f0d6-6c9a-4641-b685-76397da22681/test0/Diving-2OzlksZBTiA/'
 		if os.path.isfile(filedir+'Diving-2OzlksZBTiA_0.txt'):
 			data = np.loadtxt(filedir+'Diving-2OzlksZBTiA_0.txt')

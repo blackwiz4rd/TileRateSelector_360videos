@@ -4,7 +4,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from functions import *
 
 # data = np.loadtxt('results/uid-00d6d7f2-23df-4062-84dd-d5e99183dae1/test0/Diving-2OzlksZBTiA/Diving-2OzlksZBTiA_0.txt')
-data = np.loadtxt('results/uid-9f0512a7-3258-40bd-bd03-6d783bfb1e99/test0/Diving-2OzlksZBTiA/Diving-2OzlksZBTiA_0.txt')
+data = np.loadtxt('../results/uid-9f0512a7-3258-40bd-bd03-6d783bfb1e99/test0/Diving-2OzlksZBTiA/Diving-2OzlksZBTiA_0.txt')
 
 q = data[:,2:6]
 c = data[:,1]
@@ -141,18 +141,19 @@ plt.axhline(height, color='g')
 plt.axvline(0, color='g')
 plt.axhline(0, color='g')
 
-plt.plot(top_left[:,0],top_left[:,1],'c.')
-plt.plot(top_right[:,0],top_right[:,1],'c.')
-plt.plot(bottom_left[:,0],bottom_left[:,1],'c.')
-plt.plot(bottom_right[:,0],bottom_right[:,1],'c.')
+plt.scatter(top_left[:,0],top_left[:,1],c=c)
+plt.scatter(top_right[:,0],top_right[:,1],c=c)
+plt.scatter(bottom_left[:,0],bottom_left[:,1],c=c)
+p = plt.scatter(bottom_right[:,0],bottom_right[:,1],c=c)
+plt.colorbar(p)
 
 line_x = [bottom_left[0,0], bottom_right[0,0], top_right[0,0], top_left[0,0], bottom_left[0,0]]
 line_y = [bottom_left[0,1], bottom_right[0,1], top_right[0,1], top_left[0,1], bottom_left[0,1]]
-plt.plot(line_x, line_y, 'k')
-plt.plot(bottom_left[0,0], bottom_left[0,1], 'kx')
-plt.plot(top_right[0,0], top_right[0,1], 'kx')
-plt.plot(bottom_right[0,0], bottom_right[0,1], 'kx')
-plt.plot(top_left[0,0], top_left[0,1], 'kx')
+plt.plot(line_x, line_y, 'r')
+plt.plot(bottom_left[0,0], bottom_left[0,1], 'rx')
+plt.plot(top_right[0,0], top_right[0,1], 'rx')
+plt.plot(bottom_right[0,0], bottom_right[0,1], 'rx')
+plt.plot(top_left[0,0], top_left[0,1], 'rx')
 plt.xlabel("width [pixel]")
 plt.ylabel("height [pixel]")
 plt.xlim([0,width])
