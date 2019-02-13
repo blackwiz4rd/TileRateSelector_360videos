@@ -106,7 +106,7 @@ def delta_qt(qt, prob):
 	delta_qt = delta_qt.reshape(int(qt.size/16), 16).sum(axis=1)
 	temp = delta_qt[1:]
 	temp = np.append(temp, delta_qt[delta_qt.size-1])
-	return np.abs(delta_qt - temp)
+	return delta_qt - temp
 
 achieved_delta_quality = delta_qt(achieved_quality,np.array(df["true"]))
 best_delta_quality = delta_qt(best_quality,np.array(df["true"]))
